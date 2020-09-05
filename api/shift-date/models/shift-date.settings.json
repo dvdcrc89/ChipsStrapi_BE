@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shift_dates",
+  "info": {
+    "name": "ShiftDate"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shift-date.shift-dates"
+    },
+    "job": {
+      "via": "shift_dates",
+      "model": "jobs"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "basic_users",
+  "info": {
+    "name": "BasicUser"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "profile": {
+      "model": "profile",
+      "via": "basic_user"
+    },
+    "job": {
+      "model": "jobs",
+      "via": "applicants"
+    },
+    "jobs_applications": {
+      "collection": "jobs-applications"
+    }
+  }
+}

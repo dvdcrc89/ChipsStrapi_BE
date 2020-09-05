@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "Profile"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profileImage": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "cv": {
+      "type": "string"
+    },
+    "interests": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "profile"
+    },
+    "basic_user": {
+      "via": "profile",
+      "model": "basic-user"
+    }
+  }
+}

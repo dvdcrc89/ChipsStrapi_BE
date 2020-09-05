@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs_applications",
+  "info": {
+    "name": "JobsApplications"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "job": {
+      "model": "jobs"
+    },
+    "basic_users": {
+      "collection": "basic-user"
+    }
+  }
+}

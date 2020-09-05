@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_users",
+  "info": {
+    "name": "BusinessUser"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "restaurant": {
+      "model": "restaurant",
+      "via": "business_user"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

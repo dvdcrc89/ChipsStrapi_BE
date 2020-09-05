@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Business",
+  "info": {
+    "name": "Restaurant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "jobs": {
+      "via": "restaurant",
+      "collection": "jobs"
+    },
+    "address": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "uid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "business_user": {
+      "via": "restaurant",
+      "model": "business-user"
+    }
+  }
+}

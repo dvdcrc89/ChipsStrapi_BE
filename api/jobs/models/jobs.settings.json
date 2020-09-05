@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Jobs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "UID": {
+      "type": "uid"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "restaurant": {
+      "model": "restaurant",
+      "via": "jobs"
+    },
+    "shift_dates": {
+      "collection": "shift-date",
+      "via": "job"
+    },
+    "applicants": {
+      "via": "job",
+      "collection": "basic-user"
+    }
+  }
+}

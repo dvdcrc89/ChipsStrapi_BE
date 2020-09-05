@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shift_dates_shift_dates",
+  "info": {
+    "name": "ShiftDate",
+    "icon": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "Date": {
+      "type": "date"
+    },
+    "StartAt": {
+      "type": "time"
+    },
+    "EndAt": {
+      "type": "time"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shift-dates",
+      "handler": "shift-date.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shift-dates/count",
+      "handler": "shift-date.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shift-dates/:id",
+      "handler": "shift-date.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shift-dates",
+      "handler": "shift-date.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shift-dates/:id",
+      "handler": "shift-date.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shift-dates/:id",
+      "handler": "shift-date.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
