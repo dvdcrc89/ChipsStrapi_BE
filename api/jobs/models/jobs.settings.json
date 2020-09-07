@@ -16,16 +16,12 @@
       "type": "string"
     },
     "restaurant": {
-      "model": "restaurant",
-      "via": "jobs"
+      "via": "jobs",
+      "model": "restaurant"
     },
     "shift_dates": {
       "collection": "shift-date",
       "via": "job"
-    },
-    "applicants": {
-      "via": "job",
-      "collection": "basic-user"
     }
   }
 }

@@ -16,8 +16,8 @@
       "type": "float"
     },
     "jobs": {
-      "via": "restaurant",
-      "collection": "jobs"
+      "collection": "jobs",
+      "via": "restaurant"
     },
     "address": {
       "type": "string"
@@ -31,6 +31,12 @@
     "business_user": {
       "via": "restaurant",
       "model": "business-user"
+    },
+    "website": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }

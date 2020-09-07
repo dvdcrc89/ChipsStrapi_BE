@@ -30,11 +30,6 @@
     "interests": {
       "type": "string"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "profile"
-    },
     "basic_user": {
       "via": "profile",
       "model": "basic-user"

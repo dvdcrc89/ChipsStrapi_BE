@@ -21,7 +21,7 @@ module.exports = {
   async callback(ctx) {
     const provider = ctx.params.provider || 'local';
     const params = ctx.request.body;
-
+    console.log(params,"params");
     const store = await strapi.store({
       environment: '',
       type: 'plugin',
@@ -369,7 +369,7 @@ module.exports = {
       type: 'plugin',
       name: 'users-permissions',
     });
-
+    console.log(ctx.request.body);
     const settings = await pluginStore.get({
       key: 'advanced',
     });
@@ -483,6 +483,20 @@ module.exports = {
       if (!settings.email_confirmation) {
         params.confirmed = true;
       }
+      const { place } = ctx.request.body;
+      const createdRestaurant   = await await strapi.services['restaurant'].create({
+        name: place.name,
+        latitude: place.lat,
+        longitude: place.lng,
+        address: place.address,
+        website: place.website,
+        phone: place.phone,
+        uid: `${place.name.replace(' ','_')}_${Math.floor(Math.random()*99999)}`
+      })
+      const createdBusinessUser = await strapi.services['business-user'].create({
+        restaurant: createdRestaurant.id
+      })
+      params.business_user = createdBusinessUser.id;
 
       const user = await strapi.query('user', 'users-permissions').create(params);
 

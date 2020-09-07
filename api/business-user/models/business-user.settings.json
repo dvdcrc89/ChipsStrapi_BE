@@ -13,7 +13,7 @@
       "model": "restaurant",
       "via": "business_user"
     },
-    "user": {
+    "owner": {
       "plugin": "users-permissions",
       "model": "user"
     }
