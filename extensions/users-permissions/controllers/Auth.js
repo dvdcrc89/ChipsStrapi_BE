@@ -251,7 +251,7 @@ module.exports = {
     const provider = requestPath.split('/')[2];
 
     if (!_.get(grantConfig[provider], 'enabled')) {
-      return ctx.badRequest(null, 'This provider is disabled.');
+      return ctx.badRequest(null, `This provider is disabled. ${provider}`);
     }
 
     if (!strapi.config.server.url.startsWith('http')) {
