@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
   "url": "chipsbrighton.herokuapp.com",
   "admin": {
     "auth": {
-      "secret": env('ADMIN_JWT_SECRET'),
+      secret: env('ADMIN_JWT_SECRET'),
     },
   },
 });

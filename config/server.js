@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
-  host: "${process.env.HOST || 0.0.0.0}",
-  port: "${process.env.PORT || 1337}",
-  url: "chipsbrighton.herokuapp.com",
+  host: env("HOST", "0.0.0.0"),
+  port: env.int("PORT", 1337),
+  url: "http://localhost:1337",
   admin: {
     auth: {
       secret: env('ADMIN_JWT_SECRET'),
