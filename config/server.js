@@ -1,6 +1,6 @@
 module.exports = ({ env }) => ({
-  host: env('HOST', process.env.HOST || '0.0.0.0'),
-  port: env.int('PORT', process.env.PORT || 3000),
+  host: "${process.env.HOST || 0.0.0.0}",
+  port: "${process.env.PORT || 1337}",
   url: "chipsbrighton.herokuapp.com",
   admin: {
     auth: {
