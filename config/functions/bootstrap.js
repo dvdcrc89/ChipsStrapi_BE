@@ -52,34 +52,34 @@ const getFilesizeInBytes = filepath => {
 };
 
 const createSeedData = async () => {
-  const categoriesPromises = categories.map(({ ...rest }) => {
-    return strapi.services.category.create({
-      ...rest
-    });
-  });
-  const articlesPromises = articles.map(article => {
-    const { imageFileName, mimeType, ...rest } = article;
-    const filepath = `./seed/images/${imageFileName}`;
-    const size = getFilesizeInBytes(filepath);
-    const image = {
-      path: filepath,
-      name: imageFileName,
-      size,
-      type: mimeType
-    };
-    const files = {
-      image
-    };
-    return strapi.services.article.create(
-      {
-        author: null,
-        ...rest
-      },
-      { files }
-    );
-  });
-  await Promise.all(categoriesPromises);
-  await Promise.all(articlesPromises);
+  // const categoriesPromises = categories.map(({ ...rest }) => {
+  //   return strapi.services.category.create({
+  //     ...rest
+  //   });
+  // });
+  // const articlesPromises = articles.map(article => {
+  //   const { imageFileName, mimeType, ...rest } = article;
+  //   const filepath = `./seed/images/${imageFileName}`;
+  //   const size = getFilesizeInBytes(filepath);
+  //   const image = {
+  //     path: filepath,
+  //     name: imageFileName,
+  //     size,
+  //     type: mimeType
+  //   };
+  //   const files = {
+  //     image
+  //   };
+  //   return strapi.services.article.create(
+  //     {
+  //       author: null,
+  //       ...rest
+  //     },
+  //     { files }
+  //   );
+  // });
+  // await Promise.all(categoriesPromises);
+  // await Promise.all(articlesPromises);
 };
 
 module.exports = async () => {
