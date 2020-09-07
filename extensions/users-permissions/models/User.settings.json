@@ -57,8 +57,12 @@
       "type": "string"
     },
     "basic_user": {
-      "via": "owner",
-      "model": "basic-user"
+      "model": "basic-user",
+      "via": "owner"
+    },
+    "business_user": {
+      "model": "business-user",
+      "via": "owner"
     }
   }
 }

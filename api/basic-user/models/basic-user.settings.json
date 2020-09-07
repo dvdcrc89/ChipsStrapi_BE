@@ -17,9 +17,9 @@
       "collection": "jobs-applications"
     },
     "owner": {
+      "via": "basic_user",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "basic_user"
+      "model": "user"
     }
   }
 }
