@@ -91,7 +91,7 @@ const connect = (provider, query) => {
         //Create Profile
         const createdProfile = await strapi.services['profile'].create({
           name: profile.name || profile.email.split('@')[0],
-          profileImage: picture.pic
+          profileImage: profile.pic
         })
         
         //Create basic user
