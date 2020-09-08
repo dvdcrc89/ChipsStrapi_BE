@@ -36,7 +36,7 @@ const connect = (provider, query) => {
       if (err) {
         return reject([null, err]);
       }
-
+      console.log(profile);
       // We need at least the mail.
       if (!profile.email) {
         return reject([null, { message: 'Email was not available.' }]);
@@ -90,11 +90,8 @@ const connect = (provider, query) => {
 
         //Create Profile
         const createdProfile = await strapi.services['profile'].create({
-          name: 'Sandro',
-          profileImage: 'http://someimage.com',
-          message: 'Bla Bla Bla',
-          bio: 'Bla Bla Bla 2.0',
-
+          name: profile.name || profile.email.split('@')[0],
+          profileImage: picture.pic
         })
         
         //Create basic user
@@ -186,18 +183,21 @@ const getProfile = async (provider, query, callback) => {
         provider: 'facebook',
         config: purestConfig,
       });
-
+      console.log("facebook");
       facebook
         .query()
-        .get('me?fields=name,email')
+        .get('me?fields=email,name,picture{url}')
         .auth(access_token)
         .request((err, res, body) => {
+          console.log(body);
           if (err) {
             callback(err);
           } else {
             callback(null, {
-              username: body.name,
+              username: body.email,
               email: body.email,
+              name: body.name,
+              pic: picture.data.url
             });
           }
         });

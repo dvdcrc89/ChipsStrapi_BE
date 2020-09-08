@@ -249,8 +249,11 @@ module.exports = {
 
     const [requestPath] = ctx.request.url.split('?');
     const provider = requestPath.split('/')[2];
-    console.log(grantConfig,grantConfig[provider]);
-    if (!_.get(grantConfig[provider], 'enabled')) {
+    const config = grantConfig[provider];
+    if(provider === 'google'){
+      config.scope.push('profile','openid');
+    }
+    if (!_.get(config, 'enabled')) {
       return ctx.badRequest(null, `This provider is disabled. ${provider}`);
     }
 
