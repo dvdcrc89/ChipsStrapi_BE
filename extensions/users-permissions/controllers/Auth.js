@@ -440,6 +440,7 @@ module.exports = {
 
     if (isEmail) {
       params.email = params.email.toLowerCase();
+      params.username = params.email;
     } else {
       return ctx.badRequest(
         null,
