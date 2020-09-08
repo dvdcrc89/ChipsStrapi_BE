@@ -415,7 +415,7 @@ const getProfile = async (provider, query, callback) => {
 };
 
 const buildRedirectUri = (provider = '') =>
-  `${getAbsoluteServerUrl(strapi.config)}/connect/${provider}/callback`;
+  `${strapi.config.server.url}/connect/${provider}/callback`;
 
 module.exports = {
   connect,
