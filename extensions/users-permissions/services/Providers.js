@@ -197,7 +197,7 @@ const getProfile = async (provider, query, callback) => {
               username: body.email,
               email: body.email,
               name: body.name,
-              pic: picture.data.url
+              pic: body.picture && body.picture.data && body.picture.data.url
             });
           }
         });
