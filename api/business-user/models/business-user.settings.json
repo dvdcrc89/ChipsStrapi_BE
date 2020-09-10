@@ -10,8 +10,8 @@
   },
   "attributes": {
     "restaurant": {
-      "model": "restaurant",
-      "via": "business_user"
+      "via": "business_user",
+      "model": "restaurant"
     },
     "owner": {
       "via": "business_user",

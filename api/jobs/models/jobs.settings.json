@@ -16,12 +16,20 @@
       "type": "string"
     },
     "restaurant": {
-      "via": "jobs",
-      "model": "restaurant"
+      "model": "restaurant",
+      "via": "jobs"
     },
-    "shift_dates": {
-      "collection": "shift-date",
-      "via": "job"
+    "shift_date": {
+      "model": "shift-date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "payPerHour": {
+      "type": "decimal"
+    },
+    "position": {
+      "type": "string"
     }
   }
 }

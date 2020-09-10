@@ -13,10 +13,6 @@
       "type": "component",
       "repeatable": true,
       "component": "shift-date.shift-dates"
-    },
-    "job": {
-      "via": "shift_dates",
-      "model": "jobs"
     }
   }
 }

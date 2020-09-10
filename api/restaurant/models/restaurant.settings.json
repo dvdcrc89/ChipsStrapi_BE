@@ -16,8 +16,8 @@
       "type": "float"
     },
     "jobs": {
-      "collection": "jobs",
-      "via": "restaurant"
+      "via": "restaurant",
+      "collection": "jobs"
     },
     "address": {
       "type": "string"
@@ -29,14 +29,28 @@
       "type": "string"
     },
     "business_user": {
-      "via": "restaurant",
-      "model": "business-user"
+      "model": "business-user",
+      "via": "restaurant"
     },
     "website": {
       "type": "string"
     },
     "phone": {
       "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "profilePic": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
