@@ -33,6 +33,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/jobs-applications/toggle",
+      "handler": "jobs-applications.toggle",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/jobs-applications/:id",
       "handler": "jobs-applications.update",
