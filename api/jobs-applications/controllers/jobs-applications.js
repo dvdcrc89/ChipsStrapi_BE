@@ -20,7 +20,6 @@ module.exports = {
         } else {
             entity = await strapi.services['jobs-applications'].create(ctx.request.body);
         }
-       console.log(entity);
-        return sanitizeEntity(entity, { model: strapi.models['jobs-applications'] });
+        return sanitizeEntity({ jobsApplication: entity }, { model: strapi.models['jobs-applications'] });
       }
 };
