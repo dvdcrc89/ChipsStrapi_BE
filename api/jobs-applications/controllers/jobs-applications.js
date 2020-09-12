@@ -16,10 +16,28 @@ module.exports = {
             basic_user:basic_user
         })
         if(existingApplication){
-            entity = await strapi.services['jobs-applications'].delete({id: existingApplication.id})
+            await strapi.services['jobs-applications'].delete({id: existingApplication.id})
+            entity = false;
         } else {
-            entity = await strapi.services['jobs-applications'].create(ctx.request.body);
+            await strapi.services['jobs-applications'].create(ctx.request.body);
+            entity = true;
         }
-        return sanitizeEntity({ jobsApplication: entity }, { model: strapi.models['jobs-applications'] });
+        return sanitizeEntity(entity , { model: strapi.models['jobs-applications'] });
+      },
+
+      hasApplied: async (ctx) =>{
+        const { _userid: userid, _jobid: jobid } = ctx.params;
+        
+        console.log(userid, jobid,ctx.params);
+
+        const [existingApplication] =  await strapi.services['jobs-applications'].find({
+            job: jobid,
+            basic_user:userid
+        })
+        let entity = !!existingApplication;
+        return sanitizeEntity(entity , { model: strapi.models['jobs-applications'] });
+
       }
+
+
 };

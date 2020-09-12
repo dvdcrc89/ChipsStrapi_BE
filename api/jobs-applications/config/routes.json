@@ -25,6 +25,14 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/jobs-applications/:userid/:jobid",
+      "handler": "jobs-applications.hasApplied",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
       "path": "/jobs-applications",
       "handler": "jobs-applications.create",
