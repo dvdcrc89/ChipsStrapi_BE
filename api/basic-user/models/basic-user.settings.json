@@ -13,13 +13,14 @@
       "model": "profile",
       "via": "basic_user"
     },
-    "jobs_applications": {
-      "collection": "jobs-applications"
-    },
     "owner": {
-      "via": "basic_user",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "basic_user"
+    },
+    "job_applications": {
+      "collection": "jobs-applications",
+      "via": "basic_user"
     }
   }
 }

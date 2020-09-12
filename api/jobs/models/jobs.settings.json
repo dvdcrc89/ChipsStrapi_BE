@@ -30,6 +30,10 @@
     },
     "position": {
       "type": "string"
+    },
+    "job_applications": {
+      "via": "job",
+      "collection": "jobs-applications"
     }
   }
 }

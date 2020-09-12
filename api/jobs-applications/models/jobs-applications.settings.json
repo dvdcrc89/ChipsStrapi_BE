@@ -2,18 +2,20 @@
   "kind": "collectionType",
   "collectionName": "jobs_applications",
   "info": {
-    "name": "JobsApplications"
+    "name": "JobApplication"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "job": {
-      "model": "jobs"
+    "basic_user": {
+      "via": "job_applications",
+      "model": "basic-user"
     },
-    "basic_users": {
-      "collection": "basic-user"
+    "job": {
+      "model": "jobs",
+      "via": "job_applications"
     }
   }
 }
