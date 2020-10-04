@@ -6,14 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "Date": {
-      "type": "date"
-    },
     "StartAt": {
-      "type": "time"
+      "type": "datetime"
     },
     "EndAt": {
-      "type": "time"
+      "type": "datetime"
     }
   }
 }
